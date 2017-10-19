@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E95846E41F99123700EBFCB1 /* DirectionsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95846E31F99123700EBFCB1 /* DirectionsQuery.swift */; };
 		E968CD691F76258C0035E48E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968CD681F76258C0035E48E /* AppDelegate.swift */; };
 		E968CD6E1F76258C0035E48E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E968CD6C1F76258C0035E48E /* Main.storyboard */; };
 		E968CD701F76258C0035E48E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E968CD6F1F76258C0035E48E /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E95846E31F99123700EBFCB1 /* DirectionsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsQuery.swift; sourceTree = "<group>"; };
 		E968CD651F76258C0035E48E /* TransitPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E968CD681F76258C0035E48E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E968CD6D1F76258C0035E48E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				E96A33F41F94130B00378EA8 /* ViewController.swift */,
 				E9860E1C1F983D8500362067 /* APIManager.swift */,
+				E95846E31F99123700EBFCB1 /* DirectionsQuery.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				E96A33F51F94130B00378EA8 /* ViewController.swift in Sources */,
 				E9860E1D1F983D8500362067 /* APIManager.swift in Sources */,
 				E968CD691F76258C0035E48E /* AppDelegate.swift in Sources */,
+				E95846E41F99123700EBFCB1 /* DirectionsQuery.swift in Sources */,
 				E9860E1B1F98373A00362067 /* Route.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

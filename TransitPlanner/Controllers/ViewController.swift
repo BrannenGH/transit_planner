@@ -14,6 +14,8 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     let locationManager = CLLocationManager()
 
     //MARK: Properties
+    @IBOutlet weak var destinationSelector: UISwitch!
+    @IBOutlet weak var startSelector: UISwitch!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var startTextField: UITextField!
     @IBOutlet weak var endTextField: UITextField!

@@ -9,14 +9,13 @@
 import Foundation
 
 class APIManager {
-    let session:URLSession;
+    var session:URLSession? = nil;
     
     //MARK:Closures
     //Test Closure
     func recieveResponse(_ data:Data?,_ response:URLResponse?,_ error:Error?){
-        if response is HTTPURLResponse && (response! as! HTTPURLResponse).statusCode == 200{
-            //Makes sure if any weird call calls this handler it doesn't be weird
-            
+        if (data != nil){
+            let
         }
     }
     
@@ -26,16 +25,16 @@ class APIManager {
     }
     
     init(){
-        let sessionConfiguration = URLSessionConfiguration.default;
-        configureSession(sessionConfiguration)
-        session = URLSession(configuration: sessionConfiguration)
+        session! = URLSession(configuration: configureSession())
     }
     
-
+    func configureSession() -> URLSessionConfiguration {
+        return URLSessionConfiguration.default
+    }
     
     //Testing URLSessions
     func getNodes(url:URL){
-        session.dataTask(with: url, completionHandler: recieveResponse)
+        session!.dataTask(with: url, completionHandler: recieveResponse)
     }
     
 }
