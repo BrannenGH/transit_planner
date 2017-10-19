@@ -93,19 +93,9 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is MKCircle {
-            let renderer = MKCircleRenderer(overlay: overlay)
-            renderer.fillColor = UIColor.blue
-            renderer.strokeColor = UIColor.blue
-            renderer.lineWidth = 1
-            return renderer
-        } else if overlay is MKPolyline {
-            let renderer = MKPolylineRenderer(overlay: overlay)
-            renderer.strokeColor = UIColor.orange
-            renderer.lineWidth = 3
-            return renderer
+        if overlay is MKPolyline {
+            return Route(overlay as! MKPolyline).getRenderer()
         }
-        
         return MKOverlayRenderer()
     }
 }
