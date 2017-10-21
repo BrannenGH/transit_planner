@@ -10,43 +10,45 @@ import Foundation
 import MapKit
 
 class DirectionsQuery{
-    let directions: MKDirections
-    
+    var routes:[MKRoute]?
+    var waitingMap:MKMapView?
+
     //MARK:Closures
     
-    func handleResponse(response,error){
-        
+    func handleResponse(_ response:MKDirectionsResponse?,_ error:Error?){
+        if (error != nil) {
+            print("ERROR")
+        }else if (response != nil){
+            routes = response!.routes
+            if (waitingMap != nil){
+                addToMap(map: waitingMap!)
+            }
+        }
     }
+
     
-    
-    init(start:MKMapItem, end:MKMapItem, startDriving:Bool, endDriving:Bool){
+    init(start:MKMapItem, end:MKMapItem, formOfTransportation:MKDirectionsTransportType){
         let request = MKDirectionsRequest()
         request.source = start
         request.destination = end
         request.requestsAlternateRoutes = false
-        directions = MKDirections(request: request)
-        directions.calculate(completionHandler: <#T##MKDirectionsHandler##MKDirectionsHandler##(MKDirectionsResponse?, Error?) -> Void#>)
+        request.transportType = formOfTransportation
+        /*TODO: Once time chooser is implemented
+        request.departureDate =
+        request.arrivalDate =
+        */
+        let directions = MKDirections(request: request)
+        directions.calculate(completionHandler:handleResponse)
     }
     
-    if let transitNode = didSelect.annotation as? TransitNode {
-        request.source = MKMapItem.forCurrentLocation()
-        request.destination = transitNode.getMapItem()
-        request.requestsAlternateRoutes = false
-        
-        let directions = MKDirections(request: request)
-        
-        
-        directions.calculate(completionHandler: {(response,error) in
-            if error != nil {
-                print("ERROR")
-            } else {
-                for route in response!.routes {
-                    let currentLine:MKPolyline = route.polyline
-                    currentMapView.add(currentLine, level: MKOverlayLevel.aboveRoads)
-                    for step in route.steps {
-                        print(step.instructions)
-                    }
-                }
+    func addToMap(map:MKMapView){
+        if (routes != nil){
+            for route in routes! {
+                let line = route.polyline
+                map.add(line,level:MKOverlayLevel.aboveRoads)
             }
-        })
+        } else {
+            waitingMap = map
+        }
+    }
 }

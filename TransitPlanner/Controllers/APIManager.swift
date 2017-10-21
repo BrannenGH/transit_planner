@@ -15,7 +15,6 @@ class APIManager {
     //Test Closure
     func recieveResponse(_ data:Data?,_ response:URLResponse?,_ error:Error?){
         if (data != nil){
-            let
         }
     }
     

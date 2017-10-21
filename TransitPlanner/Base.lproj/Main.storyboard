@@ -96,12 +96,11 @@
                     </view>
                     <connections>
                         <outlet property="currentMapView" destination="7uK-3N-qwY" id="Wej-Tt-RC0"/>
-                        <outlet property="destinationSelectior" destination="Sg2-Yh-B2s" id="wKv-Qh-pwe"/>
-                        <outlet property="destinationSelector" destination="Sg2-Yh-B2s" id="rhL-ZT-PZL"/>
+                        <outlet property="destinationSelector" destination="Sg2-Yh-B2s" id="lHH-Ng-DQ4"/>
                         <outlet property="endTextField" destination="ftw-zQ-3Fy" id="49n-em-yxg"/>
                         <outlet property="headerLabel" destination="vcy-h1-MEz" id="RF7-lT-wRo"/>
                         <outlet property="searchButton" destination="igp-vW-Bk4" id="aIr-ed-ZdW"/>
-                        <outlet property="startSelector" destination="bi7-6x-sbo" id="jMn-Gl-3CV"/>
+                        <outlet property="startSelector" destination="bi7-6x-sbo" id="Eea-9o-yih"/>
                         <outlet property="startTextField" destination="ntg-yj-GW4" id="t6N-wn-SrS"/>
                     </connections>
                 </viewController>
