@@ -8,14 +8,12 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
-    let locations:[TransitNode] = [
-    TransitNode("Northtown", 45.12697,-93.264415),
-    TransitNode("Foley Park and Ride", 45.142311, -93.285325)]
 
     //MARK: Properties
     @IBOutlet weak var destinationSelector: UISwitch!
@@ -33,10 +31,15 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         currentMapView.delegate = self
         currentMapView.showsUserLocation = true
         locationManager.requestWhenInUseAuthorization()
+        FirebaseApp.configure()
+        let apiManager = APIManager(map:currentMapView)
         
-        currentMapView.setRegion(MKCoordinateRegion(center: locations[0].getCoordinates(),span: MKCoordinateSpan(latitudeDelta:0.10,longitudeDelta:0.10)), animated: true)
+        //currentMapView.showAnnotations(apiManager.getNodes(), animated: false)
         
-        currentMapView.showAnnotations(locations, animated: false)
+        //currentMapView.setRegion(MKCoordinateRegion(center: locations[0].getCoordinates(),span: MKCoordinateSpan(latitudeDelta:0.10,longitudeDelta:0.10)), animated: true)
+        
+        
+        
     }
     /*override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

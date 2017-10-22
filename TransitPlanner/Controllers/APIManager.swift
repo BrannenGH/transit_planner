@@ -7,33 +7,37 @@
 //
 
 import Foundation
+import MapKit
+import FirebaseDatabase
 
 class APIManager {
-    var session:URLSession? = nil;
+    let map:MKMapView
+    let ref:DatabaseReference!
+    var nodes:[TransitNode] = [TransitNode]()
     
     //MARK:Closures
     //Test Closure
-    func recieveResponse(_ data:Data?,_ response:URLResponse?,_ error:Error?){
-        if (data != nil){
-        }
-    }
-    
+
     //MARK: Application Logic
-    func configureSession(_ config:URLSessionConfiguration){
-        //Configuration Logic goes here.
+    
+    init(map:MKMapView){
+        self.map = map
+        ref = Database.database().reference()
+        downloadNodes()
     }
     
-    init(){
-        session! = URLSession(configuration: configureSession())
+    func getNodes() -> [TransitNode] {
+        return nodes
     }
     
-    func configureSession() -> URLSessionConfiguration {
-        return URLSessionConfiguration.default
+    func downloadNodes() {
+        ref.child("TransitLocations").observeSingleEvent(of: DataEventType.value, with:{(snapshot) in
+            let nodeDictionary = snapshot.value as? [String : [String: Any?]]
+            for (_,properties) in nodeDictionary! {
+                self.nodes.append(TransitNode(properties["Name"]! as! String,properties["Latitude"]! as! CLLocationDegrees,properties["Longitude"]! as! CLLocationDegrees))
+            }
+            self.map.showAnnotations(self.nodes, animated: false)
+            self.map.setRegion(MKCoordinateRegion(center: self.nodes[0].getCoordinates(),span: MKCoordinateSpan(latitudeDelta:0.10,longitudeDelta:0.10)), animated: true)
+        })
     }
-    
-    //Testing URLSessions
-    func getNodes(url:URL){
-        session!.dataTask(with: url, completionHandler: recieveResponse)
-    }
-    
 }

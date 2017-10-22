@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5965793B78A178A8712AB84E /* Pods_TransitPlannerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58CAD069935B4C5DD8A824B7 /* Pods_TransitPlannerTests.framework */; };
+		B99A92FC38A943623C5B2613 /* Pods_TransitPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9AFF8D542DFE6D5EE9CA81 /* Pods_TransitPlanner.framework */; };
+		E6EFE929D95C8F118F4CA9DC /* Pods_TransitPlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC29E22E38BD67C07C195A3 /* Pods_TransitPlannerUITests.framework */; };
+		E92B32971F9C1E2F00AEB3EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E92B32961F9C1E2F00AEB3EF /* GoogleService-Info.plist */; };
 		E95846E41F99123700EBFCB1 /* DirectionsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95846E31F99123700EBFCB1 /* DirectionsQuery.swift */; };
 		E968CD691F76258C0035E48E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968CD681F76258C0035E48E /* AppDelegate.swift */; };
 		E968CD6E1F76258C0035E48E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E968CD6C1F76258C0035E48E /* Main.storyboard */; };
@@ -39,6 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BB1A965D96D3F62743EF569 /* Pods-TransitPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitPlanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransitPlanner/Pods-TransitPlanner.debug.xcconfig"; sourceTree = "<group>"; };
+		58CAD069935B4C5DD8A824B7 /* Pods_TransitPlannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransitPlannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		723604ACBEAFA9AAEB40DED0 /* Pods-TransitPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitPlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransitPlanner/Pods-TransitPlanner.release.xcconfig"; sourceTree = "<group>"; };
+		7CC29E22E38BD67C07C195A3 /* Pods_TransitPlannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransitPlannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81B61131CFD109D814E2CF68 /* Pods-TransitPlannerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitPlannerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransitPlannerUITests/Pods-TransitPlannerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8AE1127ADE001E1CC8A059F1 /* Pods-TransitPlannerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitPlannerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransitPlannerTests/Pods-TransitPlannerTests.release.xcconfig"; sourceTree = "<group>"; };
+		BE9AFF8D542DFE6D5EE9CA81 /* Pods_TransitPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransitPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D78A976BED4DE874C91F26FA /* Pods-TransitPlannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitPlannerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransitPlannerUITests/Pods-TransitPlannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E92B32961F9C1E2F00AEB3EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E95846E31F99123700EBFCB1 /* DirectionsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsQuery.swift; sourceTree = "<group>"; };
 		E968CD651F76258C0035E48E /* TransitPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E968CD681F76258C0035E48E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +70,7 @@
 		E96A33F61F94132800378EA8 /* TransitNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitNode.swift; sourceTree = "<group>"; };
 		E9860E1C1F983D8500362067 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		E9DF3D831F9BE96200B3FD45 /* RouteRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRenderer.swift; sourceTree = "<group>"; };
-		E9DF3D851F9BF18D00B3FD45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF708EBB9B3E70FE06EBC509 /* Pods-TransitPlannerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitPlannerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransitPlannerTests/Pods-TransitPlannerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E968CD981F76260B0035E48E /* MapKit.framework in Frameworks */,
+				B99A92FC38A943623C5B2613 /* Pods_TransitPlanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5965793B78A178A8712AB84E /* Pods_TransitPlannerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +95,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6EFE929D95C8F118F4CA9DC /* Pods_TransitPlannerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5EA0A2BEEE521AEBC06665F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4BB1A965D96D3F62743EF569 /* Pods-TransitPlanner.debug.xcconfig */,
+				723604ACBEAFA9AAEB40DED0 /* Pods-TransitPlanner.release.xcconfig */,
+				EF708EBB9B3E70FE06EBC509 /* Pods-TransitPlannerTests.debug.xcconfig */,
+				8AE1127ADE001E1CC8A059F1 /* Pods-TransitPlannerTests.release.xcconfig */,
+				D78A976BED4DE874C91F26FA /* Pods-TransitPlannerUITests.debug.xcconfig */,
+				81B61131CFD109D814E2CF68 /* Pods-TransitPlannerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E968CD5C1F76258C0035E48E = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +123,7 @@
 				E968CD871F76258C0035E48E /* TransitPlannerUITests */,
 				E968CD661F76258C0035E48E /* Products */,
 				E968CD961F76260B0035E48E /* Frameworks */,
+				5EA0A2BEEE521AEBC06665F4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +140,7 @@
 		E968CD671F76258C0035E48E /* TransitPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				E92B32961F9C1E2F00AEB3EF /* GoogleService-Info.plist */,
 				E96A33F91F9413AA00378EA8 /* Views */,
 				E96A33F81F94139B00378EA8 /* Controllers */,
 				E968CD681F76258C0035E48E /* AppDelegate.swift */,
@@ -118,7 +149,6 @@
 				E968CD6F1F76258C0035E48E /* Assets.xcassets */,
 				E968CD711F76258C0035E48E /* LaunchScreen.storyboard */,
 				E968CD741F76258C0035E48E /* Info.plist */,
-				E9DF3D851F9BF18D00B3FD45 /* GoogleService-Info.plist */,
 			);
 			path = TransitPlanner;
 			sourceTree = "<group>";
@@ -145,6 +175,9 @@
 			isa = PBXGroup;
 			children = (
 				E968CD971F76260B0035E48E /* MapKit.framework */,
+				BE9AFF8D542DFE6D5EE9CA81 /* Pods_TransitPlanner.framework */,
+				58CAD069935B4C5DD8A824B7 /* Pods_TransitPlannerTests.framework */,
+				7CC29E22E38BD67C07C195A3 /* Pods_TransitPlannerUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -182,9 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E968CD8D1F76258C0035E48E /* Build configuration list for PBXNativeTarget "TransitPlanner" */;
 			buildPhases = (
+				B3F24F916A7D6927AE5FC0CB /* [CP] Check Pods Manifest.lock */,
 				E968CD611F76258C0035E48E /* Sources */,
 				E968CD621F76258C0035E48E /* Frameworks */,
 				E968CD631F76258C0035E48E /* Resources */,
+				65DF2C937B411C68622150A8 /* [CP] Embed Pods Frameworks */,
+				D0C501440C6D595E716A3D3A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,9 +235,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E968CD901F76258C0035E48E /* Build configuration list for PBXNativeTarget "TransitPlannerTests" */;
 			buildPhases = (
+				6DDF4687A61FBD4D5683EA57 /* [CP] Check Pods Manifest.lock */,
 				E968CD751F76258C0035E48E /* Sources */,
 				E968CD761F76258C0035E48E /* Frameworks */,
 				E968CD771F76258C0035E48E /* Resources */,
+				8CE955EF994B552D6DB064CA /* [CP] Embed Pods Frameworks */,
+				AE8D8EAB0ADA4E950B3CF07A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,9 +256,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E968CD931F76258C0035E48E /* Build configuration list for PBXNativeTarget "TransitPlannerUITests" */;
 			buildPhases = (
+				F238574F2FD7760F7B40FBAE /* [CP] Check Pods Manifest.lock */,
 				E968CD801F76258C0035E48E /* Sources */,
 				E968CD811F76258C0035E48E /* Frameworks */,
 				E968CD821F76258C0035E48E /* Resources */,
+				BE19F34FAC8267E6AC8F68D2 /* [CP] Embed Pods Frameworks */,
+				AC2B1F9A23A157DE4B1C5B90 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E968CD731F76258C0035E48E /* LaunchScreen.storyboard in Resources */,
+				E92B32971F9C1E2F00AEB3EF /* GoogleService-Info.plist in Resources */,
 				E968CD701F76258C0035E48E /* Assets.xcassets in Resources */,
 				E968CD6E1F76258C0035E48E /* Main.storyboard in Resources */,
 			);
@@ -312,6 +355,160 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65DF2C937B411C68622150A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TransitPlanner/Pods-TransitPlanner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransitPlanner/Pods-TransitPlanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DDF4687A61FBD4D5683EA57 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TransitPlannerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CE955EF994B552D6DB064CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransitPlannerTests/Pods-TransitPlannerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC2B1F9A23A157DE4B1C5B90 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransitPlannerUITests/Pods-TransitPlannerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE8D8EAB0ADA4E950B3CF07A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransitPlannerTests/Pods-TransitPlannerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3F24F916A7D6927AE5FC0CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TransitPlanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE19F34FAC8267E6AC8F68D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransitPlannerUITests/Pods-TransitPlannerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0C501440C6D595E716A3D3A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransitPlanner/Pods-TransitPlanner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F238574F2FD7760F7B40FBAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TransitPlannerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E968CD611F76258C0035E48E /* Sources */ = {
@@ -487,6 +684,7 @@
 		};
 		E968CD8E1F76258C0035E48E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BB1A965D96D3F62743EF569 /* Pods-TransitPlanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CH64A7AV3T;
@@ -501,6 +699,7 @@
 		};
 		E968CD8F1F76258C0035E48E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 723604ACBEAFA9AAEB40DED0 /* Pods-TransitPlanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CH64A7AV3T;
@@ -515,6 +714,7 @@
 		};
 		E968CD911F76258C0035E48E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF708EBB9B3E70FE06EBC509 /* Pods-TransitPlannerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -530,6 +730,7 @@
 		};
 		E968CD921F76258C0035E48E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AE1127ADE001E1CC8A059F1 /* Pods-TransitPlannerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -545,6 +746,7 @@
 		};
 		E968CD941F76258C0035E48E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D78A976BED4DE874C91F26FA /* Pods-TransitPlannerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TransitPlannerUITests/Info.plist;
@@ -559,6 +761,7 @@
 		};
 		E968CD951F76258C0035E48E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81B61131CFD109D814E2CF68 /* Pods-TransitPlannerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TransitPlannerUITests/Info.plist;
