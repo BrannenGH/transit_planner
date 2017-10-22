@@ -8,12 +8,16 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
+    let geocoder = CLGeocoder()
 
     //MARK: Properties
+    @IBOutlet weak var destinationSelector: UISwitch!
+    @IBOutlet weak var startSelector: UISwitch!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var startTextField: UITextField!
     @IBOutlet weak var endTextField: UITextField!
@@ -27,12 +31,15 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         currentMapView.delegate = self
         currentMapView.showsUserLocation = true
         locationManager.requestWhenInUseAuthorization()
+        FirebaseApp.configure()
+        let apiManager = APIManager(map:currentMapView)
         
-        let location1 = TransitNode("Northtown", 45.12697,-93.264415)
-        let location2 = TransitNode("Foley Park and Ride", 45.142311, -93.285325)
-        currentMapView.setRegion(MKCoordinateRegion(center: location1.getCoordinates(),span: MKCoordinateSpan(latitudeDelta:0.10,longitudeDelta:0.10)), animated: true)
+        //currentMapView.showAnnotations(apiManager.getNodes(), animated: false)
         
-        currentMapView.showAnnotations([location1,location2], animated: false)
+        //currentMapView.setRegion(MKCoordinateRegion(center: locations[0].getCoordinates(),span: MKCoordinateSpan(latitudeDelta:0.10,longitudeDelta:0.10)), animated: true)
+        
+        
+        
     }
     /*override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,9 +47,11 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     }*/
     
     //MARK: Actions
-    @IBAction func search(_ sender: UIButton) {
-        headerLabel.text = startTextField.text!
-    }
+    /*@IBAction func search(_ sender: UIButton) {
+        if (startTextField.text != nil && endTextField.text != nil){
+            geocoder.geocodeAddressString(startTextField.text!)
+        }
+    }*/
     
     //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField:UITextField) -> Bool {
@@ -67,45 +76,22 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     }
     
     func mapView(_ currentMapView:MKMapView,didSelect:MKAnnotationView){
-        if let transitNode = didSelect.annotation as? TransitNode {
-            let request = MKDirectionsRequest()
-            request.source = MKMapItem.forCurrentLocation()
-            request.destination = transitNode.getMapItem()
-            request.requestsAlternateRoutes = false
-            
-            let directions = MKDirections(request: request)
-            
-            
-            directions.calculate(completionHandler: {(response,error) in
-                if error != nil {
-                    print("ERROR")
-                } else {
-                    for route in response!.routes {
-                        let currentLine:MKPolyline = route.polyline
-                        currentMapView.add(currentLine, level: MKOverlayLevel.aboveRoads)
-                        for step in route.steps {
-                            print(step.instructions)
-                        }
-                    }
-                }
-            })
+        //TODO: Find nearest transit node
+        //TODO: Calculate drive to transit node
+        //TODO: Calculate transit from transit node to transit node
+        //TODO: Calculate drive from finalnode to final
+        if (didSelect.annotation is TransitNode){
+            let transitNode = didSelect.annotation as! TransitNode
+            let directionsQuery = DirectionsQuery(start:MKMapItem.forCurrentLocation(),end:transitNode.getMapItem(),
+                    formOfTransportation: MKDirectionsTransportType.automobile)
+            directionsQuery.addToMap(map: currentMapView)
         }
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is MKCircle {
-            let renderer = MKCircleRenderer(overlay: overlay)
-            renderer.fillColor = UIColor.blue
-            renderer.strokeColor = UIColor.blue
-            renderer.lineWidth = 1
-            return renderer
-        } else if overlay is MKPolyline {
-            let renderer = MKPolylineRenderer(overlay: overlay)
-            renderer.strokeColor = UIColor.orange
-            renderer.lineWidth = 3
-            return renderer
+        if overlay is MKPolyline {
+            return RouteRenderer(line: overlay as! MKPolyline)
         }
-        
         return MKOverlayRenderer()
     }
 }
