@@ -32,7 +32,9 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         currentMapView.showsUserLocation = true
         locationManager.requestWhenInUseAuthorization()
         FirebaseApp.configure()
-        let apiManager = APIManager(map:currentMapView)
+        let start:MKMapItem = MKMapItem(placemark:MKPlacemark(coordinate: locationManager.location!.coordinate))
+        let end:MKMapItem = MKMapItem(placemark:MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 45.3, longitude: -93.2)))
+        APIManager(map:currentMapView,start:start,end:end)
     }
     /*override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
