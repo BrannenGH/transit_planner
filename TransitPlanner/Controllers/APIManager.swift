@@ -11,23 +11,22 @@ import MapKit
 import FirebaseDatabase
 import GeoFire
 
+//Make struts for closures, clean up call backs. Also have object be initalized with stings of locations.
 class APIManager {
     let map:MKMapView
-    let ref:DatabaseReference!
-    let geoFire: GeoFire!
+    let ref: DatabaseReference
+    let geoFire: GeoFire
     var nodes:[TransitNode] = [TransitNode]()
     
     //MARK:Closures
     
     //MARK: Application Logic
     
-    init(map:MKMapView,start:MKMapItem,end:MKMapItem){
+    init(map:MKMapView,start:String?,end:String?){
         self.map = map
         ref = Database.database().reference()
         geoFire = GeoFire(firebaseRef: ref.child("GeoFire"))
-        let endCoordinate = end.placemark.location!
-        let startCoordinate = start.placemark.location!
-        downloadNodes(start:startCoordinate,end:endCoordinate)
+        _ = LocationQuery(start:start,end:end,apiManager:self)
     }
     
     func getNodes() -> [TransitNode] {
@@ -35,8 +34,8 @@ class APIManager {
     }
     
     func downloadNodes(start:CLLocation,end:CLLocation){
-        loadQueryToMap(query: geoFire.query(at: start, withRadius: 20))
-        loadQueryToMap(query:geoFire.query(at:end, withRadius: 20))
+        self.loadQueryToMap(query: geoFire.query(at: start, withRadius: 20))
+        self.loadQueryToMap(query:geoFire.query(at:end, withRadius: 20))
     }
     
     func loadQueryToMap(query:GFCircleQuery?){
@@ -51,8 +50,9 @@ class APIManager {
             })
         }
     }
-/*  Old version, updates firebase nodes.
-     func downloadNodes() {
+    
+    //TODO: Find another way to do this
+     func updateFirebase() {
         ref.child("TransitLocations").observeSingleEvent(of: DataEventType.value, with:{(snapshot) in
             let nodeDictionary = snapshot.value as? [String : [String: Any?]]
             for (nodeName,properties) in nodeDictionary! {
@@ -62,5 +62,5 @@ class APIManager {
             self.map.showAnnotations(self.nodes, animated: false)
             self.map.setRegion(MKCoordinateRegion(center: self.nodes[0].getCoordinates(),span: MKCoordinateSpan(latitudeDelta:0.10,longitudeDelta:0.10)), animated: true)
         })
-    }*/
+    }
 }
