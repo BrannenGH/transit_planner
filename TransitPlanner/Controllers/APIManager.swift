@@ -12,11 +12,12 @@ import FirebaseDatabase
 import GeoFire
 
 //Make struts for closures, clean up call backs. Also have object be initalized with stings of locations.
-class APIManager {
-    let map:MKMapView
-    let ref: DatabaseReference
-    let geoFire: GeoFire
-    var nodes:[TransitNode] = [TransitNode]()
+class APIManager: NSObject, CLLocationManagerDelegate {
+    private let map:MKMapView
+    private let ref: DatabaseReference
+    private let geoFire: GeoFire
+    private let locationManager = CLLocationManager()
+    private var nodes:[TransitNode] = [TransitNode]()
     
     //MARK:Closures
     
@@ -26,19 +27,22 @@ class APIManager {
         self.map = map
         ref = Database.database().reference()
         geoFire = GeoFire(firebaseRef: ref.child("GeoFire"))
-        _ = LocationQuery(start:start,end:end,apiManager:self)
+        super.init()
+        _ = LocationQuery(start:start,end:end,locationManager:locationManager,completionHandler: { startResult, endResult in
+            self.downloadNodes(start: startResult![0].placemark.location!, end: endResult![0].placemark.location!)
+        })
     }
     
     func getNodes() -> [TransitNode] {
         return nodes
     }
     
-    func downloadNodes(start:CLLocation,end:CLLocation){
+    private func downloadNodes(start:CLLocation,end:CLLocation){
         self.loadQueryToMap(query: geoFire.query(at: start, withRadius: 20))
-        self.loadQueryToMap(query:geoFire.query(at:end, withRadius: 20))
+        self.loadQueryToMap(query: geoFire.query(at: end, withRadius: 20))
     }
     
-    func loadQueryToMap(query:GFCircleQuery?){
+    private func loadQueryToMap(query:GFCircleQuery?){
         query!.observe(GFEventType.keyEntered) { (key, location) in
             self.ref.child("TransitLocations").child(key!).observeSingleEvent(of: .value, with: {(snapshot) in
                 let nodeDictionary = snapshot.value as! [String: Any?]
@@ -52,7 +56,7 @@ class APIManager {
     }
     
     //TODO: Find another way to do this
-     func updateFirebase() {
+    private func updateFirebase() {
         ref.child("TransitLocations").observeSingleEvent(of: DataEventType.value, with:{(snapshot) in
             let nodeDictionary = snapshot.value as? [String : [String: Any?]]
             for (nodeName,properties) in nodeDictionary! {

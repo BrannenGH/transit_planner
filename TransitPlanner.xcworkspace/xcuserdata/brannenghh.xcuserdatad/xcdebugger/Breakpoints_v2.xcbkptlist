@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TransitPlanner/Controllers/LocationQuery.swift"
-            timestampString = "531024419.818055"
+            timestampString = "531337730.265714"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "init(start:end:apiManager:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "init(start:end:locationManager:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -73,9 +73,6 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                                <connections>
-                                                    <action selector="startPosUpdated:" destination="RGt-c1-sRM" eventType="editingDidEnd" id="ZTT-BF-ZGS"/>
-                                                </connections>
                                             </textField>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bi7-6x-sbo">
                                                 <rect key="frame" x="326" y="0.0" width="51" height="31"/>
@@ -90,9 +87,6 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="endPosUpdated:" destination="RGt-c1-sRM" eventType="editingDidEnd" id="QWX-0h-4er"/>
-                                                </connections>
                                             </textField>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sg2-Yh-B2s">
                                                 <rect key="frame" x="326" y="0.0" width="51" height="31"/>
@@ -103,7 +97,6 @@
                                         <rect key="frame" x="0.0" y="232.5" width="375" height="30"/>
                                         <state key="normal" title="Search"/>
                                         <connections>
-                                            <action selector="searchTouchDown" destination="RGt-c1-sRM" eventType="touchDown" id="WUV-fO-Drh"/>
                                             <segue destination="BYZ-38-t0r" kind="show" id="Zyx-JS-hAy"/>
                                         </connections>
                                     </button>

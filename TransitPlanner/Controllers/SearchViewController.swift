@@ -9,9 +9,7 @@
 import UIKit
 
 class SearchViewController: UIViewController, UITextFieldDelegate {
-    var startPos:String?
-    var endPos:String?
-    
+
     @IBOutlet weak var header: UILabel!
     @IBOutlet weak var startTextField: UITextField!
     @IBOutlet weak var startSwitch: UISwitch!
@@ -31,19 +29,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     // MARK: - Navigation
-    @IBAction func startPosUpdated(_ sender: UITextField) {
-        startPos = sender.text
-    }
-    
-    @IBAction func endPosUpdated(_ sender: UITextField) {
-        endPos = sender.text
-    }
-    @IBAction func searchTouchDown() {
-        header.text = "\(startPos ?? "None") \(endPos ?? "None")"
-        header.sizeToFit()
-    }
-    
+
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         if (textField == startTextField){
             self.endTextField.becomeFirstResponder()
         }
@@ -57,8 +45,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue:UIStoryboardSegue, sender: Any?){
         if let mapViewController = segue.destination as? MapViewController {
-            mapViewController.startLocation = startPos
-            mapViewController.endLocation = endPos
+            mapViewController.startLocation = startTextField.text
+            mapViewController.endLocation = endTextField.text
         }
     }
 }

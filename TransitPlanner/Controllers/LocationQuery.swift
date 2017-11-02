@@ -9,22 +9,22 @@
 import Foundation
 import MapKit
 
-class LocationQuery: NSObject, CLLocationManagerDelegate{
-    let locationManager = CLLocationManager()
+class LocationQuery{
+    let locationManager:CLLocationManager
     let start: String?
     let end: String?
-    let apiManager: APIManager
+    let completionHandler: ([MKMapItem]?,[MKMapItem]?) -> ()
     var startResult: [MKMapItem]?
-    var startCoordinate: CLLocation?
     var endResult: [MKMapItem]?
     
-    init(start:String?, end:String?,apiManager:APIManager){
+    
+    init(start:String?, end:String?,locationManager:CLLocationManager, completionHandler:@escaping (_ startResult:[MKMapItem]?,_ endResult:[MKMapItem]?) -> ()){
         print("Start location \(start ?? "None")")
         print("End location \(end!)")
+        self.locationManager = locationManager;
         self.start = start
         self.end = end
-        self.apiManager = apiManager
-        super.init()
+        self.completionHandler = completionHandler
         startRequest()
     }
     
@@ -32,7 +32,7 @@ class LocationQuery: NSObject, CLLocationManagerDelegate{
         let request = MKLocalSearchRequest()
         if start == nil || start! == ""{
             locationManager.requestWhenInUseAuthorization()
-            startCoordinate = locationManager.location
+            startResult = [MKMapItem(placemark: MKPlacemark(coordinate: locationManager.location!.coordinate))]
         } else {
             request.naturalLanguageQuery = start!
             let startSearch = MKLocalSearch(request: request)
@@ -42,7 +42,7 @@ class LocationQuery: NSObject, CLLocationManagerDelegate{
     
     private func startLookup(response:MKLocalSearchResponse?,error:Error?){
         if error == nil {
-            startResult = response?.mapItems
+            startResult = response!.mapItems
             endRequest()
         } else {
             print(error!)
@@ -59,17 +59,10 @@ class LocationQuery: NSObject, CLLocationManagerDelegate{
     private func endLookup(response:MKLocalSearchResponse?,error:Error?){
         if error == nil {
             endResult = response!.mapItems
-            finish()
+            completionHandler(startResult,endResult)
         } else {
             print(error!)
         }
     }
     
-    private func finish(){
-        if startResult != nil {
-            apiManager.downloadNodes(start: startResult![0].placemark.location!, end: endResult![0].placemark.location!)
-        } else {
-            apiManager.downloadNodes(start: startCoordinate!, end: endResult![0].placemark.location!)
-        }
-    }
 }
