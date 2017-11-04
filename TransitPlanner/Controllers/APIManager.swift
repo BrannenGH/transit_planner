@@ -18,17 +18,21 @@ class APIManager: NSObject, CLLocationManagerDelegate {
     private let geoFire: GeoFire
     private let locationManager = CLLocationManager()
     private var nodes:[TransitNode] = [TransitNode]()
+    var start:MKMapItem?
+    var end:MKMapItem?
     
     //MARK:Closures
     
     //MARK: Application Logic
     
-    init(map:MKMapView,start:String?,end:String?){
+    init(map:MKMapView,start:String?,end:String?) {
         self.map = map
         ref = Database.database().reference()
         geoFire = GeoFire(firebaseRef: ref.child("GeoFire"))
         super.init()
         _ = LocationQuery(start:start,end:end,locationManager:locationManager,completionHandler: { startResult, endResult in
+            self.start = startResult![0]
+            self.end = endResult![0]
             self.downloadNodes(start: startResult![0].placemark.location!, end: endResult![0].placemark.location!)
         })
     }
@@ -66,5 +70,20 @@ class APIManager: NSObject, CLLocationManagerDelegate {
             self.map.showAnnotations(self.nodes, animated: false)
             self.map.setRegion(MKCoordinateRegion(center: self.nodes[0].getCoordinates(),span: MKCoordinateSpan(latitudeDelta:0.10,longitudeDelta:0.10)), animated: true)
         })
+    }
+    
+    func getDirections(start:MKMapItem, end:MKMapItem, formOfTransport:MKDirectionsTransportType, map:MKMapView){
+        let directionQuery = DirectionsQuery(start: start, end: end, formOfTransportation: formOfTransport)
+        directionQuery.addToMap(map: map)
+    }
+    
+    
+    // Set up error conditions soon.
+    func getStart() -> MKMapItem{
+        return self.start!
+    }
+    
+    func getEnd() -> MKMapItem {
+        return self.end!
     }
 }
