@@ -10,29 +10,21 @@ import UIKit
 import MapKit
 import Firebase
 
-class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
-    
-    let locationManager = CLLocationManager()
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     let geocoder = CLGeocoder()
+    var startLocation:String?
+    var endLocation:String?
 
     //MARK: Properties
-    @IBOutlet weak var destinationSelector: UISwitch!
-    @IBOutlet weak var startSelector: UISwitch!
-    @IBOutlet weak var headerLabel: UILabel!
-    @IBOutlet weak var startTextField: UITextField!
-    @IBOutlet weak var endTextField: UITextField!
-    @IBOutlet weak var searchButton: UIButton!
+
     @IBOutlet weak var currentMapView: MKMapView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        startTextField.delegate = self
-        endTextField.delegate = self
+    override func viewWillAppear(_ animated:Bool) {
+        super.viewWillAppear(false)
         currentMapView.delegate = self
         currentMapView.showsUserLocation = true
-        locationManager.requestWhenInUseAuthorization()
         FirebaseApp.configure()
-        let apiManager = APIManager(map:currentMapView)
+        let _ = APIManager(map:currentMapView,start:startLocation,end:endLocation)
     }
     /*override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,10 +42,6 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     func textFieldShouldReturn(_ textField:UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        headerLabel.text = textField.text
     }
     
     

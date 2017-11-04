@@ -9,32 +9,59 @@
 import Foundation
 import MapKit
 import FirebaseDatabase
+import GeoFire
 
-class APIManager {
-    let map:MKMapView
-    let ref:DatabaseReference!
-    var nodes:[TransitNode] = [TransitNode]()
+//Make struts for closures, clean up call backs. Also have object be initalized with stings of locations.
+class APIManager: NSObject, CLLocationManagerDelegate {
+    private let map:MKMapView
+    private let ref: DatabaseReference
+    private let geoFire: GeoFire
+    private let locationManager = CLLocationManager()
+    private var nodes:[TransitNode] = [TransitNode]()
     
     //MARK:Closures
-    //Test Closure
-
+    
     //MARK: Application Logic
     
-    init(map:MKMapView){
+    init(map:MKMapView,start:String?,end:String?){
         self.map = map
         ref = Database.database().reference()
-        downloadNodes()
+        geoFire = GeoFire(firebaseRef: ref.child("GeoFire"))
+        super.init()
+        _ = LocationQuery(start:start,end:end,locationManager:locationManager,completionHandler: { startResult, endResult in
+            self.downloadNodes(start: startResult![0].placemark.location!, end: endResult![0].placemark.location!)
+        })
     }
     
     func getNodes() -> [TransitNode] {
         return nodes
     }
     
-    func downloadNodes() {
+    private func downloadNodes(start:CLLocation,end:CLLocation){
+        self.loadQueryToMap(query: geoFire.query(at: start, withRadius: 20))
+        self.loadQueryToMap(query: geoFire.query(at: end, withRadius: 20))
+    }
+    
+    private func loadQueryToMap(query:GFCircleQuery?){
+        query!.observe(GFEventType.keyEntered) { (key, location) in
+            self.ref.child("TransitLocations").child(key!).observeSingleEvent(of: .value, with: {(snapshot) in
+                let nodeDictionary = snapshot.value as! [String: Any?]
+                self.nodes.append(TransitNode(nodeDictionary["Name"]! as! String,nodeDictionary["Latitude"]! as! CLLocationDegrees,nodeDictionary["Longitude"]! as! CLLocationDegrees))
+                if (self.nodes.count != 0){
+                    self.map.showAnnotations(self.nodes, animated: false)
+                    self.map.setRegion(MKCoordinateRegion(center: self.nodes[0].getCoordinates(),span: MKCoordinateSpan(latitudeDelta:0.10,longitudeDelta:0.10)), animated: true)
+                }
+            })
+        }
+    }
+    
+    //TODO: Find another way to do this
+    private func updateFirebase() {
         ref.child("TransitLocations").observeSingleEvent(of: DataEventType.value, with:{(snapshot) in
             let nodeDictionary = snapshot.value as? [String : [String: Any?]]
-            for (_,properties) in nodeDictionary! {
+            for (nodeName,properties) in nodeDictionary! {
                 self.nodes.append(TransitNode(properties["Name"]! as! String,properties["Latitude"]! as! CLLocationDegrees,properties["Longitude"]! as! CLLocationDegrees))
+                self.geoFire.setLocation(CLLocation(latitude:properties["Latitude"]! as! CLLocationDegrees,longitude:properties["Longitude"]! as! CLLocationDegrees), forKey: nodeName)
             }
             self.map.showAnnotations(self.nodes, animated: false)
             self.map.setRegion(MKCoordinateRegion(center: self.nodes[0].getCoordinates(),span: MKCoordinateSpan(latitudeDelta:0.10,longitudeDelta:0.10)), animated: true)

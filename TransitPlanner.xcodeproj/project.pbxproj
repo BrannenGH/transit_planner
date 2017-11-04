@@ -19,9 +19,11 @@
 		E968CD7E1F76258C0035E48E /* TransitPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968CD7D1F76258C0035E48E /* TransitPlannerTests.swift */; };
 		E968CD891F76258C0035E48E /* TransitPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968CD881F76258C0035E48E /* TransitPlannerUITests.swift */; };
 		E968CD981F76260B0035E48E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E968CD971F76260B0035E48E /* MapKit.framework */; };
-		E96A33F51F94130B00378EA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96A33F41F94130B00378EA8 /* ViewController.swift */; };
+		E96A33F51F94130B00378EA8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96A33F41F94130B00378EA8 /* MapViewController.swift */; };
 		E96A33F71F94132800378EA8 /* TransitNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96A33F61F94132800378EA8 /* TransitNode.swift */; };
 		E9860E1D1F983D8500362067 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9860E1C1F983D8500362067 /* APIManager.swift */; };
+		E98F348D1FA546C2001C5087 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F348C1FA546C2001C5087 /* SearchViewController.swift */; };
+		E9C5C3EB1FA6AF9800603C6A /* LocationQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C5C3EA1FA6AF9800603C6A /* LocationQuery.swift */; };
 		E9DF3D841F9BE96200B3FD45 /* RouteRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF3D831F9BE96200B3FD45 /* RouteRenderer.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,9 +68,11 @@
 		E968CD881F76258C0035E48E /* TransitPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitPlannerUITests.swift; sourceTree = "<group>"; };
 		E968CD8A1F76258C0035E48E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E968CD971F76260B0035E48E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		E96A33F41F94130B00378EA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E96A33F41F94130B00378EA8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E96A33F61F94132800378EA8 /* TransitNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitNode.swift; sourceTree = "<group>"; };
 		E9860E1C1F983D8500362067 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		E98F348C1FA546C2001C5087 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E9C5C3EA1FA6AF9800603C6A /* LocationQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationQuery.swift; sourceTree = "<group>"; };
 		E9DF3D831F9BE96200B3FD45 /* RouteRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRenderer.swift; sourceTree = "<group>"; };
 		EF708EBB9B3E70FE06EBC509 /* Pods-TransitPlannerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitPlannerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransitPlannerTests/Pods-TransitPlannerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,9 +189,11 @@
 		E96A33F81F94139B00378EA8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E96A33F41F94130B00378EA8 /* ViewController.swift */,
+				E96A33F41F94130B00378EA8 /* MapViewController.swift */,
 				E9860E1C1F983D8500362067 /* APIManager.swift */,
 				E95846E31F99123700EBFCB1 /* DirectionsQuery.swift */,
+				E98F348C1FA546C2001C5087 /* SearchViewController.swift */,
+				E9C5C3EA1FA6AF9800603C6A /* LocationQuery.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -518,9 +524,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E96A33F71F94132800378EA8 /* TransitNode.swift in Sources */,
-				E96A33F51F94130B00378EA8 /* ViewController.swift in Sources */,
+				E98F348D1FA546C2001C5087 /* SearchViewController.swift in Sources */,
+				E96A33F51F94130B00378EA8 /* MapViewController.swift in Sources */,
 				E9DF3D841F9BE96200B3FD45 /* RouteRenderer.swift in Sources */,
 				E9860E1D1F983D8500362067 /* APIManager.swift in Sources */,
+				E9C5C3EB1FA6AF9800603C6A /* LocationQuery.swift in Sources */,
 				E968CD691F76258C0035E48E /* AppDelegate.swift in Sources */,
 				E95846E41F99123700EBFCB1 /* DirectionsQuery.swift in Sources */,
 			);
