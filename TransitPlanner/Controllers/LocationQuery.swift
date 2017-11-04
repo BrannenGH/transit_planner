@@ -18,10 +18,10 @@ class LocationQuery{
     var endResult: [MKMapItem]?
     
     
-    init(start:String?, end:String?,locationManager:CLLocationManager, completionHandler:@escaping (_ startResult:[MKMapItem]?,_ endResult:[MKMapItem]?) -> ()){
+    init(start:String?, end:String?, locationManager:CLLocationManager, completionHandler:@escaping (_ startResult:[MKMapItem]?,_ endResult:[MKMapItem]?) -> ()){
         print("Start location \(start ?? "None")")
         print("End location \(end!)")
-        self.locationManager = locationManager;
+        self.locationManager = locationManager
         self.start = start
         self.end = end
         self.completionHandler = completionHandler
