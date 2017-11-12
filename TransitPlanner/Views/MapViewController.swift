@@ -10,15 +10,12 @@ import UIKit
 import MapKit
 import Firebase
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, RoutePlannerDelegate {
+
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let geocoder = CLGeocoder()
-    var startLocation:String?
-    var endLocation:String?
-    var startTransportationType: MKDirectionsTransportType = MKDirectionsTransportType.any
-    var endTransportationType: MKDirectionsTransportType = MKDirectionsTransportType.any
-    var selectedNodes = [TransitNode]()
-    var previousNode: TransitNode?
-    var apiManager:APIManager?
+    var routePlanner: RoutePlanner?
 
 
     //MARK: Properties
@@ -28,11 +25,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     override func viewWillAppear(_ animated:Bool) {
         super.viewWillAppear(false)
+        routePlanner = appDelegate.routePlanner
         currentMapView.delegate = self
         currentMapView.showsUserLocation = true
-        FirebaseApp.configure()
-        self.apiManager = APIManager(map:currentMapView,start:startLocation,end:endLocation)
+        routePlanner!.delegate = self
     }
+    
     /*override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -51,8 +49,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         return true
     }
     
+    func loadToMap(wholeRoute: RoutePlanner.WholeRoute) {
+        currentMapView.add(wholeRoute.0.polyline, level:.aboveRoads)
+        currentMapView.add(wholeRoute.1.polyline, level:.aboveRoads)
+        currentMapView.add(wholeRoute.2.polyline, level:.aboveRoads)
+    }
     
-    func mapViewWillStartLoadingMap(_ currentMapView:MKMapView ){
+/*    func mapViewWillStartLoadingMap(_ currentMapView:MKMapView ){
         
     }
     
@@ -68,6 +71,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         //TODO: Calculate drive to transit node
         //TODO: Calculate transit from transit node to transit node
         //TODO: Calculate drive from finalnode to final
+        
         if (previousNode == nil){
             previousNode = (didSelect.annotation as! TransitNode)
             apiManager!.getDirections(start:apiManager!.getStart(),end:previousNode!.getMapItem(), formOfTransport: startTransportationType, map: currentMapView)
@@ -82,32 +86,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     formOfTransportation: MKDirectionsTransportType.automobile)
             directionsQuery.addToMap(map: currentMapView)
         }*/
-    }
+    }*/
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKPolyline {
             return RouteRenderer(line: overlay as! MKPolyline)
         }
         return MKOverlayRenderer()
-    }
-    
-    func setStartType(_ start:String){
-        startTransportationType = strToTransportation(name: start)
-    }
-    
-    func setEndType(_ end:String){
-        endTransportationType = strToTransportation(name: end)
-    }
-    
-    private func strToTransportation(name:String) -> MKDirectionsTransportType {
-        switch name {
-            case "Driving":
-                return MKDirectionsTransportType.automobile
-            case "Walking":
-                return MKDirectionsTransportType.walking
-            default:
-                return MKDirectionsTransportType.any
-        }
     }
 }
 

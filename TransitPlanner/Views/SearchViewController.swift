@@ -11,6 +11,9 @@ import UIKit
 class SearchViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let transportionTypes = ["Driving","Walking"]
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var routePlanner: RoutePlanner?
+
 
     @IBOutlet weak var startTextField: UITextField!
     @IBOutlet weak var endTextField: UITextField!
@@ -19,6 +22,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        routePlanner = appDelegate.routePlanner
         startTextField.delegate = self
         endTextField.delegate = self
         startTransportationPicker.delegate = self
@@ -47,10 +51,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     
     override func prepare(for segue:UIStoryboardSegue, sender: Any?){
         if let mapViewController = segue.destination as? MapViewController {
-            mapViewController.setStartType(transportionTypes[startTransportationPicker.selectedRow(inComponent: 0)])
-            mapViewController.setEndType(transportionTypes[endTransportationPicker.selectedRow(inComponent: 0)])
-            mapViewController.startLocation = startTextField.text
-            mapViewController.endLocation = endTextField.text
+            routePlanner!.fetchRoute(start: startTextField.text!, end: endTextField.text!)
         }
     }
     
