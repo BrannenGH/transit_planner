@@ -17,16 +17,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
 
     @IBOutlet weak var startTextField: UITextField!
     @IBOutlet weak var endTextField: UITextField!
-    @IBOutlet weak var startTransportationPicker: UIPickerView!
-    @IBOutlet weak var endTransportationPicker: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         routePlanner = appDelegate.routePlanner
         startTextField.delegate = self
         endTextField.delegate = self
-        startTransportationPicker.delegate = self
-        endTransportationPicker.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -50,7 +46,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     }
     
     override func prepare(for segue:UIStoryboardSegue, sender: Any?){
-        if let mapViewController = segue.destination as? MapViewController {
+        if segue.destination is MapViewController {
             routePlanner!.fetchRoute(start: startTextField.text!, end: endTextField.text!)
         }
     }

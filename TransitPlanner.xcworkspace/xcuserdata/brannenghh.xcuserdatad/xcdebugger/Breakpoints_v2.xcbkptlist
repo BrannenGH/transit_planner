@@ -42,13 +42,253 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TransitPlanner/Controllers/RoutePlanner.swift"
-            timestampString = "532166841.11302"
+            timestampString = "532244131.100816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "RoutePlanner"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TransitPlanner/Controllers/RoutePlanner.swift"
+            timestampString = "532244131.100894"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "fetchRoute(start:end:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;__ObjC.MKMapItem&gt;&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Array&lt;__ObjC.MKMapItem&gt;&gt;) -&gt; () in TransitPlanner.RoutePlanner.fetchRoute(start: Swift.String, end: Swift.String) -&gt; ()"
+                  moduleName = "TransitPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brannenghh/Library/Mobile%20Documents/com~apple~CloudDocs/Programming/TransitPlanner/TransitPlanner/Controllers/RoutePlanner.swift"
+                  timestampString = "532243282.032006"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "408">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;TransitPlanner.TransitNode&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Array&lt;__ObjC.MKMapItem&gt;&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Array&lt;__ObjC.MKMapItem&gt;&gt;) -&gt; () in TransitPlanner.RoutePlanner.fetchRoute(start: Swift.String, end: Swift.String) -&gt; ()"
+                  moduleName = "TransitPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brannenghh/Library/Mobile%20Documents/com~apple~CloudDocs/Programming/TransitPlanner/TransitPlanner/Controllers/RoutePlanner.swift"
+                  timestampString = "532243282.070987"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TransitPlanner/Controllers/RoutePlanner.swift"
+            timestampString = "532244131.10096"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "fetchRoute(start:end:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;TransitPlanner.TransitNode&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Array&lt;__ObjC.MKMapItem&gt;&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Array&lt;__ObjC.MKMapItem&gt;&gt;) -&gt; () in TransitPlanner.RoutePlanner.fetchRoute(start: Swift.String, end: Swift.String) -&gt; ()"
+                  moduleName = "TransitPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brannenghh/Library/Mobile%20Documents/com~apple~CloudDocs/Programming/TransitPlanner/TransitPlanner/Controllers/RoutePlanner.swift"
+                  timestampString = "532243283.783113"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;TransitPlanner.TransitNode&gt;) -&gt; () in closure #1 (Swift.Array&lt;TransitPlanner.TransitNode&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Array&lt;__ObjC.MKMapItem&gt;&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Array&lt;__ObjC.MKMapItem&gt;&gt;) -&gt; () in TransitPlanner.RoutePlanner.fetchRoute(start: Swift.String, end: Swift.String) -&gt; ()"
+                  moduleName = "TransitPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brannenghh/Library/Mobile%20Documents/com~apple~CloudDocs/Programming/TransitPlanner/TransitPlanner/Controllers/RoutePlanner.swift"
+                  timestampString = "532243283.785513"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TransitPlanner/Models/BestRoute.swift"
+            timestampString = "532244131.101027"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "planRoute()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "planRoute #1 () -&gt; () in TransitPlanner.BestRoute(start: TransitPlanner.Location, end: TransitPlanner.Location, completionHandler: (__ObjC.MKRoute, __ObjC.MKRoute, __ObjC.MKRoute) -&gt; ()) -&gt; ()"
+                  moduleName = "TransitPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brannenghh/Library/Mobile%20Documents/com~apple~CloudDocs/Programming/TransitPlanner/TransitPlanner/Models/BestRoute.swift"
+                  timestampString = "532243431.078106"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "1040">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Swift.Optional&lt;__ObjC.MKRoute&gt;&gt;) -&gt; () in planRoute #1 () -&gt; () in TransitPlanner.BestRoute(start: TransitPlanner.Location, end: TransitPlanner.Location, completionHandler: (__ObjC.MKRoute, __ObjC.MKRoute, __ObjC.MKRoute) -&gt; ()) -&gt; ()"
+                  moduleName = "TransitPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brannenghh/Library/Mobile%20Documents/com~apple~CloudDocs/Programming/TransitPlanner/TransitPlanner/Models/BestRoute.swift"
+                  timestampString = "532243431.080534"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "360">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TransitPlanner/Models/BestRoute.swift"
+            timestampString = "532244131.101419"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "planRoute()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "planRoute #1 () -&gt; () in TransitPlanner.BestRoute(start: TransitPlanner.Location, end: TransitPlanner.Location, completionHandler: (__ObjC.MKRoute, __ObjC.MKRoute, __ObjC.MKRoute) -&gt; ()) -&gt; ()"
+                  moduleName = "TransitPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brannenghh/Library/Mobile%20Documents/com~apple~CloudDocs/Programming/TransitPlanner/TransitPlanner/Models/BestRoute.swift"
+                  timestampString = "532243663.7053"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "856">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Swift.Optional&lt;__ObjC.MKRoute&gt;&gt;) -&gt; () in planRoute #1 () -&gt; () in TransitPlanner.BestRoute(start: TransitPlanner.Location, end: TransitPlanner.Location, completionHandler: (__ObjC.MKRoute, __ObjC.MKRoute, __ObjC.MKRoute) -&gt; ()) -&gt; ()"
+                  moduleName = "TransitPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brannenghh/Library/Mobile%20Documents/com~apple~CloudDocs/Programming/TransitPlanner/TransitPlanner/Models/BestRoute.swift"
+                  timestampString = "532243663.707557"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TransitPlanner/Models/BestRoute.swift"
+            timestampString = "532244131.101727"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "findMinRoute(routes:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "findMinRoute #1 (routes: Swift.Array&lt;(route: __ObjC.MKRoute, start: __ObjC.MKMapItem, end: __ObjC.MKMapItem)&gt;) -&gt; () in TransitPlanner.BestRoute(start: TransitPlanner.Location, end: TransitPlanner.Location, completionHandler: (__ObjC.MKRoute, __ObjC.MKRoute, __ObjC.MKRoute) -&gt; ()) -&gt; ()"
+                  moduleName = "TransitPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brannenghh/Library/Mobile%20Documents/com~apple~CloudDocs/Programming/TransitPlanner/TransitPlanner/Models/BestRoute.swift"
+                  timestampString = "532244131.142208"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "1088">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Swift.Optional&lt;__ObjC.MKRoute&gt;&gt;) -&gt; () in findMinRoute #1 (routes: Swift.Array&lt;(route: __ObjC.MKRoute, start: __ObjC.MKMapItem, end: __ObjC.MKMapItem)&gt;) -&gt; () in TransitPlanner.BestRoute(start: TransitPlanner.Location, end: TransitPlanner.Location, completionHandler: (__ObjC.MKRoute, __ObjC.MKRoute, __ObjC.MKRoute) -&gt; ()) -&gt; ()"
+                  moduleName = "TransitPlanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brannenghh/Library/Mobile%20Documents/com~apple~CloudDocs/Programming/TransitPlanner/TransitPlanner/Models/BestRoute.swift"
+                  timestampString = "532244131.144565"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

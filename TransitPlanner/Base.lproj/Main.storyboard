@@ -117,7 +117,7 @@
                                 <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ny5-jQ-u6g">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lIN-GH-PEJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -125,36 +125,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLG-2m-uqs">
-                                                <rect key="frame" x="0.0" y="30" width="375" height="31"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Current Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lR4-2X-DA7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="326" height="31"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WO7-7o-Vul">
-                                                        <rect key="frame" x="326" y="0.0" width="51" height="31"/>
-                                                    </switch>
-                                                </subviews>
-                                            </stackView>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IT-4E-R35">
-                                                <rect key="frame" x="0.0" y="61" width="375" height="216"/>
-                                            </pickerView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="End Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="csx-J8-55Y">
-                                                <rect key="frame" x="0.0" y="277" width="375" height="30"/>
+                                                <rect key="frame" x="0.0" y="30" width="375" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YvF-eT-lMb">
-                                                <rect key="frame" x="0.0" y="307" width="375" height="216"/>
-                                            </pickerView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vn2-nl-ctk">
-                                                <rect key="frame" x="0.0" y="523" width="375" height="30"/>
-                                                <state key="normal" title="Search"/>
-                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -176,9 +152,7 @@
                     </view>
                     <connections>
                         <outlet property="endTextField" destination="csx-J8-55Y" id="UoP-R8-S4U"/>
-                        <outlet property="endTransportationPicker" destination="YvF-eT-lMb" id="jhB-Lu-JBK"/>
                         <outlet property="startTextField" destination="lIN-GH-PEJ" id="Oo9-KS-WnE"/>
-                        <outlet property="startTransportationPicker" destination="6IT-4E-R35" id="PZf-gk-XJq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJ4-Wp-PQM" userLabel="First Responder" sceneMemberID="firstResponder"/>

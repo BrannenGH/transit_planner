@@ -18,19 +18,22 @@ func BestRoute(start:Location, end:Location, completionHandler: @escaping (Route
         for startNode in start.getNodes(){
             for endNode in end.getNodes(){
                 //Apparently can't get transit directions, no such route for polyline
-                DirectionsQuery(start: startNode.getMapItem(), end: endNode.getMapItem(), transport: .automobile){ (routes) in
+                print(start.getNodes().count)
+                print(end.getNodes().count)
+                DirectionsQuery(start: startNode.getMapItem(), end: endNode.getMapItem(), transport: .transit){ (routes) in
                     possibleRoutes.append((route:routes[0]!,start:startNode.getMapItem(),end:endNode.getMapItem()))
                     if (possibleRoutes.count >= start.getNodes().count * end.getNodes().count){
                         findMinRoute(routes: possibleRoutes)
                     }
                 }
-                sleep(5)
+                print("How many times run?")
             }
         }
     }
     
     func findMinRoute(routes:[transitRoute]){
         //Compares to itself first, maybe fix by starting at one
+        print("We find a min route right?")
         var minRoute = routes[0]
         for route in routes{
             if (minRoute.route.expectedTravelTime - route.route.expectedTravelTime > 0){

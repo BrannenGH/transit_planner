@@ -23,12 +23,24 @@ func DirectionsQuery(start:MKMapItem, end:MKMapItem, transport:MKDirectionsTrans
          request.arrivalDate =
         */
         let directions = MKDirections(request: request)
-        directions.calculate(completionHandler:recieveRequest)
+        if (transport != MKDirectionsTransportType.transit){
+            directions.calculate(completionHandler:recieveRequest)
+        } else {
+            directions.calculateETA(completionHandler: recieveETA)
+        }
     }
 
     func recieveRequest(_ response:MKDirectionsResponse?,_ error:Error?){
         if (response != nil){
             completionHandler(response!.routes)
+        } else {
+            print(error ?? "Error and response were nil")
+        }
+    }
+    
+    func recieveETA(_ response:MKETAResponse?, _ error: Error?) {
+        if (response != nil){
+            completionHandler(response)
         } else {
             print(error ?? "Error and response were nil")
         }

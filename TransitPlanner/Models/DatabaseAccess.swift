@@ -22,17 +22,24 @@ class DatabaseAccess {
     
     func retrieveNodes(location: Location,completionHandler: @escaping ([TransitNode]) -> ()){
         let query = geoFire.query(at:location.getCoordinate(), withRadius: location.range)
+        var observed = 0
         query!.observe(GFEventType.keyEntered) { (key, location) in
-            self.ref.child("TransitLocations").child(key!).observeSingleEvent(of: .value, with: {(snapshot) in
-                let nodeDictionary = snapshot.value as! [String: Any?]
-                var downloadedNodes = [TransitNode]()
-                do {
-                    downloadedNodes.append(TransitNode(nodeDictionary["Name"]! as! String,nodeDictionary["Latitude"]! as! CLLocationDegrees,nodeDictionary["Longitude"]! as! CLLocationDegrees))
-                } /*catch {
-                 print("There is an error with the database configuration")
-                 }*/
-                completionHandler(downloadedNodes)
-            })
+            if observed == 0 {
+                observed += 1
+                self.ref.child("TransitLocations").child(key!).observeSingleEvent(of: .value, with: {(snapshot) in
+                    let nodeDictionary = snapshot.value as! [String: Any?]
+                    var downloadedNodes = [TransitNode]()
+                    do {
+                        downloadedNodes.append(TransitNode(nodeDictionary["Name"]! as! String,nodeDictionary["Latitude"]! as! CLLocationDegrees,nodeDictionary["Longitude"]! as! CLLocationDegrees))
+                    } /*catch {
+                     print("There is an error with the database configuration")
+                     }*/
+                    completionHandler(downloadedNodes)
+                    /*Figure out how in the world to get the NSObserver to stop observing
+                    util then*/
+                    //query?.removeObserver(query!, forKeyPath: <#T##String#>)
+                })
+            }
         }
     }
     
