@@ -15,7 +15,7 @@ protocol RoutePlannerDelegate: class {
 
 //Make struts for closures, clean up call backs. Also have object be initalized with stings of locations.
 class RoutePlanner {
-    typealias WholeRoute = (MKRoute,MKRoute,MKRoute)
+    typealias WholeRoute = (MKRoute,MKRoute)
     let data:DatabaseAccess
     weak var delegate: RoutePlannerDelegate?
     var timesRan = 0

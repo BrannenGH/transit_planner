@@ -28,6 +28,7 @@
 		E98F348D1FA546C2001C5087 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F348C1FA546C2001C5087 /* SearchViewController.swift */; };
 		E9C5C3EB1FA6AF9800603C6A /* LocationQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C5C3EA1FA6AF9800603C6A /* LocationQuery.swift */; };
 		E9DF3D841F9BE96200B3FD45 /* RouteRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF3D831F9BE96200B3FD45 /* RouteRenderer.swift */; };
+		E9F1C9EE1FC7622000CA9C7F /* ETAQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F1C9ED1FC7622000CA9C7F /* ETAQuery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		E98F348C1FA546C2001C5087 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E9C5C3EA1FA6AF9800603C6A /* LocationQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationQuery.swift; sourceTree = "<group>"; };
 		E9DF3D831F9BE96200B3FD45 /* RouteRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRenderer.swift; sourceTree = "<group>"; };
+		E9F1C9ED1FC7622000CA9C7F /* ETAQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETAQuery.swift; sourceTree = "<group>"; };
 		EF708EBB9B3E70FE06EBC509 /* Pods-TransitPlannerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitPlannerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransitPlannerTests/Pods-TransitPlannerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +217,7 @@
 			children = (
 				E9C5C3EA1FA6AF9800603C6A /* LocationQuery.swift */,
 				E95846E31F99123700EBFCB1 /* DirectionsQuery.swift */,
+				E9F1C9ED1FC7622000CA9C7F /* ETAQuery.swift */,
 				E95708561FAE923C00A6F5B2 /* DatabaseAccess.swift */,
 				E96A33F61F94132800378EA8 /* TransitNode.swift */,
 				E95708581FAE956B00A6F5B2 /* Location.swift */,
@@ -541,6 +544,7 @@
 				E9860E1D1F983D8500362067 /* RoutePlanner.swift in Sources */,
 				E9C5C3EB1FA6AF9800603C6A /* LocationQuery.swift in Sources */,
 				E968CD691F76258C0035E48E /* AppDelegate.swift in Sources */,
+				E9F1C9EE1FC7622000CA9C7F /* ETAQuery.swift in Sources */,
 				E95846E41F99123700EBFCB1 /* DirectionsQuery.swift in Sources */,
 				E982AC7D1FB82719003F38FD /* BestRoute.swift in Sources */,
 			);

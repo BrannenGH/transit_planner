@@ -48,7 +48,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func loadToMap(wholeRoute: RoutePlanner.WholeRoute) {
         currentMapView.add(wholeRoute.0.polyline, level:.aboveRoads)
-        currentMapView.add(wholeRoute.2.polyline, level:.aboveRoads)
+        currentMapView.add(wholeRoute.1.polyline, level:.aboveRoads)
     }
     
 /*    func mapViewWillStartLoadingMap(_ currentMapView:MKMapView ){
