@@ -1,15 +1,15 @@
 //
-//  DirectionsQuery.swift
+//  ETAQuery.swift
 //  TransitPlanner
 //
-//  Created by Brannen Hall on 10/19/17.
+//  Created by Brannen Hall on 17-11-23
 //  Copyright © 2017 BrannenGHH. All rights reserved.
 //
 
 import Foundation
 import MapKit
 
-func DirectionsQuery(start:MKMapItem, end:MKMapItem, transport:MKDirectionsTransportType, completionHandler: @escaping ([MKRoute?]) -> ()){
+func ETAQuery(start:MKMapItem, end:MKMapItem, transport:MKDirectionsTransportType, completionHandler: @escaping (MKETAResponse?) -> ()){
     
     func startRequest(){
         let request = MKDirectionsRequest()
@@ -21,18 +21,17 @@ func DirectionsQuery(start:MKMapItem, end:MKMapItem, transport:MKDirectionsTrans
          TODO: Once time chooser is implemented
          request.departureDate =
          request.arrivalDate =
-        */
+         */
         let directions = MKDirections(request: request)
-        directions.calculate(completionHandler:recieveRequest)
+        directions.calculateETA(completionHandler: recieveETA)
     }
 
-    func recieveRequest(_ response:MKDirectionsResponse?,_ error:Error?){
+    func recieveETA(_ response:MKETAResponse?, _ error: Error?) {
         if (response != nil){
-            completionHandler(response!.routes)
+            completionHandler(response)
         } else {
             print(error ?? "Error and response were nil")
         }
     }
-    
     startRequest()
 }

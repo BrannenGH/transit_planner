@@ -15,25 +15,29 @@ protocol RoutePlannerDelegate: class {
 
 //Make struts for closures, clean up call backs. Also have object be initalized with stings of locations.
 class RoutePlanner {
-    typealias WholeRoute = (MKRoute,MKRoute,MKRoute)
+    typealias WholeRoute = (MKRoute,MKRoute)
     let data:DatabaseAccess
     weak var delegate: RoutePlannerDelegate?
+    var timesRan = 0
     
     init() {
         data = DatabaseAccess()
     }
     
     func fetchRoute(start:String,end:String){
-        LocationQuery(location:start){ (startResult) in
-            LocationQuery(location:end){ (endResult) in
-                let startLocation = Location(location:(startResult![0]),range:20,transport: MKDirectionsTransportType.automobile)
-                let endLocation = Location(location:(endResult![0]), range:20, transport: MKDirectionsTransportType.automobile)
-                self.data.retrieveNodes(location: startLocation){ (nodes) in
-                    startLocation.setNodes(nodes: nodes)
-                    self.data.retrieveNodes(location: endLocation) { (nodes) in
-                        endLocation.setNodes(nodes: nodes)
-                        BestRoute(start:startLocation,end: endLocation){ (wholeRoute) in
-                            self.delegate!.loadToMap(wholeRoute: wholeRoute)
+        if (timesRan == 0){
+            self.timesRan += 1
+            LocationQuery(location:start){ (startResult) in
+                LocationQuery(location:end){ (endResult) in
+                    let startLocation = Location(location:(startResult![0]),range:20,transport: MKDirectionsTransportType.automobile)
+                    let endLocation = Location(location:(endResult![0]), range:20, transport: MKDirectionsTransportType.automobile)
+                    self.data.retrieveNodes(location: startLocation){ (nodes) in
+                        startLocation.setNodes(nodes: nodes)
+                        self.data.retrieveNodes(location: endLocation) { (nodes) in
+                            endLocation.setNodes(nodes: nodes)
+                            BestRoute(start:startLocation,end: endLocation){ (wholeRoute) in
+                                self.delegate!.loadToMap(wholeRoute: wholeRoute)
+                            }
                         }
                     }
                 }
